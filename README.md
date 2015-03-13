@@ -8,7 +8,7 @@ a namespace named My_Event
 ```
 ##Event_Manager
 ```bash
-和int double 一样用于声明事件池
+和 int double 一样用于声明事件池
 ```
 ##Arguments
 ```bash

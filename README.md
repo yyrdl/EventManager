@@ -1,6 +1,39 @@
 # EventManager
 学node.js 的时候接触到事件类这个东东，顿时就爱上了。苦于C++中没有这样的库，而且C++又是强类型语言，很是抓狂啊。
 
+##My_Event
+```bash
+命名空间
+a namespace named My_Event
+```
+##Event_Manager
+```bash
+和int double 一样用于声明事件池
+```
+##Arguments
+```bash
+   回调函数的形参类型声明符，用法参加示例
+```
+##Arguments_Package
+```bash
+类名，用于包装传入回调函数的参数
+```
+##Callback_Package
+```bash
+ 类名，包装回调函数
+```
+##Event.on(eventName,callback)
+```bash
+   注册监听事件，用法见示例
+```
+##Event.emit(eventName,arguments) &&Event.emit(eventName)
+```bash
+    激发相应事件,并传递相应参数
+```
+##Event.removeEventListener(eventName)
+```bash
+  移除事件监听
+```
 ```c++
   #include <myEvent.h>
   using namespace My_Event;
@@ -51,7 +84,7 @@
     }
  };
   
-  void outPut(Arguments *tar)
+  void display(Arguments *tar)
   {
     ABC *p=(ABC*)tar->getArgumentsPointer();//important
     p->dis();
@@ -81,7 +114,7 @@
      ABC *pp=new ABC;
      typedef void(*f2)(Arguments*);
      Arguments_Package<ABC*>arguments2(pp);
-     Callback_Package<f2>func2(outt);
+     Callback_Package<f2>func2(display);
      myEventPool.on("fire",&func2);
      myEventPool.emit("fire",&arguments2);
 
